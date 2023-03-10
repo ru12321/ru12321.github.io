@@ -1,1 +1,0 @@
-import{_ as t,W as n,X as _,Y as e}from"./framework-52f8fb67.js";const c={},s=e("div",{class:"hint-container info"},[e("p",{class:"hint-container-title"},"相关信息"),e("p",null,"就是玩儿")],-1),o=[s];function a(i,l){return n(),_("div",null,o)}const d=t(c,[["render",a],["__file","我的爱好.html.vue"]]);export{d as default};
