@@ -17,21 +17,29 @@ jobs:
           # 如果你文档需要 Git 子模块，取消注释下一行
           # submodules: true
 
-#      - name: 安装 pnpm
-#        uses: pnpm/action-setup@v2
-#        with:
-#          version: 7
-#          run_install: true
-#
-#
-#      - name: 设置 Node.js
-#        uses: actions/setup-node@v3
-#        with:
-#          node-version: 16.16.0
-#          cache: pnpm
+      # 缓存 node_modules 以避免重复安装
+      - uses: actions/cache@v3
+        id: node-modules
+        with:
+          # 需要缓存的路径
+          path: node_modules/
+          # 缓存的 key
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
+          # 恢复 key
+          restore-keys: |
+            ${{ runner.os }}-node-modules-
 
-      - name: 构建文档
-        run: pnpm run docs:build
+      # 安装依赖
+      - name: Install Deps
+        # 只有没有命中缓存才会执行
+        if: steps.node-modules.outputs.cache-hit != 'true'
+        # 严格按照 yarn.lock 安装依赖
+        run: yarn install --frozen-lockfile
+
+      # 构建项目
+      - name: Build
+        # 项目的构建命令
+        run: yarn run build
 
       - name: 部署文档
         uses: JamesIves/github-pages-deploy-action@v4
