@@ -1,10 +1,11 @@
+
 name: 部署文档
 
 on:
   push:
     branches:
       # 确保这是你正在使用的分支名称
-      - master
+      - main
 
 jobs:
   deploy-gh-pages:
@@ -17,29 +18,27 @@ jobs:
           # 如果你文档需要 Git 子模块，取消注释下一行
           # submodules: true
 
-      # 缓存 node_modules 以避免重复安装
-      - uses: actions/cache@v3
-        id: node-modules
+      - name: 安装 pnpm
+        uses: pnpm/action-setup@v2
         with:
-          # 需要缓存的路径
-          path: node_modules/
-          # 缓存的 key
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
-          # 恢复 key
-          restore-keys: |
-            ${{ runner.os }}-node-modules-
+          version: 7
+          run_install: true
 
-      # 安装依赖
-      - name: Install Deps
-        # 只有没有命中缓存才会执行
-        if: steps.node-modules.outputs.cache-hit != 'true'
-        # 严格按照 yarn.lock 安装依赖
-        run: yarn install --frozen-lockfile
 
-      # 构建项目
-      - name: Build
-        # 项目的构建命令
-        run: yarn run docs:build
+      - name: 设置 Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.16.0
+          cache: pnpm
+
+
+      - name: 构建文档
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: npm rebuild node-sass
+        run: |-
+          pnpm run docs:build
+          > src/.vuepress/dist/.nojekyll
 
       - name: 部署文档
         uses: JamesIves/github-pages-deploy-action@v4
