@@ -31,9 +31,6 @@ jobs:
           node-version: 16.16.0
           cache: pnpm
 
-      - name: rebulid node-sass
-        run: npm rebuild node-sass
-
       - name: 构建文档
         env:
           NODE_OPTIONS: --max_old_space_size=8192
