@@ -1,0 +1,1 @@
+import{_ as e,W as t,X as s,Y as n}from"./framework-52f8fb67.js";const _={},c=n("p",null,"读过的书~hhhh test2 test3 test4 test5",-1),o=[c];function r(a,l){return t(),s("div",null,o)}const h=e(_,[["render",r],["__file","index.html.vue"]]);export{h as default};
