@@ -1,0 +1,1 @@
+import{_ as t,W as n,X as s,Y as e}from"./framework-715d567f.js";const c={},l=e("p",null,"测试页面，用来记录一些页面配置",-1),o=e("p",null,"index: false 不展示在侧边栏，不收集到children中 comment: false 不显示评论",-1),_=[l,o];function a(r,d){return n(),s("div",null,_)}const m=t(c,[["render",a],["__file","example.html.vue"]]);export{m as default};
