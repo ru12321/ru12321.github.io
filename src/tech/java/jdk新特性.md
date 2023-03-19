@@ -245,9 +245,9 @@ Collector接口中方法的实现决定了如何对流执行收集的操作 如�
 
 另外，Collectors 实用类提供了很多**静态方法**，可以方便地创建常见收集器实例
 
-![img](https://picbed-for-mrru-mdfile.oss-cn-chengdu.aliyuncs.com/mrru-glodon/c81e2dc254feb1fa57c25a8ebca2d414.png)
+![image-20230317154719527](https://typora-imgbed-mrru.oss-cn-chengdu.aliyuncs.com/ruyb/202303171547597.png)
 
-![img](https://picbed-for-mrru-mdfile.oss-cn-chengdu.aliyuncs.com/mrru-glodon/8e5d1e8c2f0db698fba9dd82f0eec84c.png)
+![image-20230317154727522](https://typora-imgbed-mrru.oss-cn-chengdu.aliyuncs.com/ruyb/202303171547592.png)
 
 # 二、Lambda表达式
 
