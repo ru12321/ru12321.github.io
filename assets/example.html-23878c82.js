@@ -1,0 +1,1 @@
+import{_ as t,W as l,X as s,Y as e}from"./framework-715d567f.js";const c={},n=e("p",null,"测试页面，用来记录一些页面配置",-1),o=e("p",null,"index: false 不展示在侧边栏，不收集到children中 comment: false 不显示评论 article: false 该md不展示在博客首页的文章列表",-1),_=[n,o];function a(r,d){return l(),s("div",null,_)}const m=t(c,[["render",a],["__file","example.html.vue"]]);export{m as default};
