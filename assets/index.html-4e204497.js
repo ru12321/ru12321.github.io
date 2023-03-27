@@ -1,1 +1,0 @@
-import{_ as e,W as t,X as n,Y as _}from"./framework-715d567f.js";const c={},o=_("p",null,"雄关漫道真如铁，而今迈步从头越",-1),s=[o];function r(a,l){return t(),n("div",null,s)}const i=e(c,[["render",r],["__file","index.html.vue"]]);export{i as default};
