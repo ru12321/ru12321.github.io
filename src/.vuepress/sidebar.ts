@@ -18,6 +18,13 @@ export const sidebarConfig = sidebar({
         children: "structure"
       },
       {
+        text: "部署运维",
+        icon: "build",
+        prefix: "ops/",
+        collapsible: true,
+        children: "structure"
+      },
+      {
         text: "系统设计",
         icon: "hot",
         prefix: "system_design/",

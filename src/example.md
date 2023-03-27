@@ -13,3 +13,4 @@ comment: true
 
 index: false  不展示在侧边栏，不收集到children中
 comment: false  不显示评论
+article: false 该md不展示在博客首页的文章列表
