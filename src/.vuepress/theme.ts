@@ -45,7 +45,7 @@ export default hopeTheme({
   //每次修改都会触发一些高耗时计算并且整个应用程序将重新启动，可能获得数秒白屏
   // hotReload: true,
 
-  footer: "默认页脚",
+  footer: "天若有情天亦老，人间正道是沧桑",
   displayFooter: true,
 
   //字体图标资源链接，支持 'iconfont' 和 'fontawesome' 关键字
