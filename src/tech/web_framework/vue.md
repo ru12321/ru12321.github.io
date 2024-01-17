@@ -46,7 +46,7 @@ category: javascript & vue
   * push(元素)  添加元素到lists中
   * splice(start,delCount)，从start开始，删除数组delCount个元素
 * v-model   代替了标签的value属性，常见于 input 或表单等标签
-* 总价格：{{ totalPrice().toFixed(2) }}     {{ }}里面可以调用方法，显示的是vue实例方法的返回值，toFixed(2)保留两位小数的意思
+* 总价格： totalPrice().toFixed(2)     {{ }}里面可以调用方法，显示的是vue实例方法的返回值，toFixed(2)保留两位小数的意思
 * <a  href="baidu.com" @click="test"  点击a标签会先触发@click，再触发href
 * @CrossOrigin解决跨域问题  加在Controller类上
 * ==@RequestBody的作用其实是将json格式的数据转为java对象==，在axios发送post请求时，传过来的就是json数据，要在Controller的方法参数上加上@requestbody
@@ -984,8 +984,8 @@ Vue生命周期总结
     - beforeUpdate(){//5.生命周期中第五个函数,该函数是data中数据发生变化时执行 这个事件执行时仅仅是**Vue实例中data数据变化**，**页面显示的依然是原始数据**
     - updated(){    //6.生命周期中第六个函数,该函数执行时data中数据发生变化,==页面中数据也发生了变化==  页面中数据已经和data中数据一致
 - 3.销毁阶段
-    - beforeDestory(){//7.生命周期第七个函数,该函数执行时,Vue中所有数据 methods componet 都没销毁},
-    - destoryed(){ //8.生命周期的第八个函数,该函数执行时,Vue实例彻底销毁}
+    - beforeDestory()//7.生命周期第七个函数,该函数执行时,Vue中所有数据 methods componet 都没销毁,
+    - destoryed() //8.生命周期的第八个函数,该函数执行时,Vue实例彻底销毁
 
 ----
 
