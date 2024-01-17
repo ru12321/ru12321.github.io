@@ -433,7 +433,7 @@ profile：轮廓，侧面的意思
 
 mvn deploy 用来将项目生成的构件分发到远程Maven仓库
 
-- maven仓库分为两种 **release发布仓库**(<repository>) 和 **snapshot快照仓库**(<snapshotsrepository>)
+- maven仓库分为两种 **release发布仓库**(< repository>) 和 **snapshot快照仓库**(< snapshotsrepository>)
 
 - snapshot快照仓库用于保存开发过程中的**不稳定**版本
 - release正式仓库用来保存**稳定**的发行版本

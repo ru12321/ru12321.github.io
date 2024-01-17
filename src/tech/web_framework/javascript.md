@@ -28,7 +28,7 @@ ECMAScript 7 也称为 ECMAScript 2016。
 
 ## js用法
 
-* HTML 中的 Javascript 脚本代码必须位于 **<script>** 与 **</script>** 标签之间。
+* HTML 中的 Javascript 脚本代码必须位于 **< script>** 与 **< /script>** 标签之间。
 
 * 浏览器会在页面加载时，解释并执行位于 `<script> `和 `</script>`之间的 JavaScript 代码 
 
