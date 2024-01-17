@@ -1,4 +1,8 @@
-
+---
+title: React
+date: 2024-01-17
+category: javascript & react
+---
 
 # Hooks
 
@@ -1036,25 +1040,26 @@ const render = () => ReactDOM.render(<App />, rootElement);
 更简洁理解的代码 https://blog.csdn.net/qq_30632003/article/details/124940407
 
 ```js
-import React from "react";
+import React from "src/tech/web_framework/react";
 import ReactDOM from "react-dom";
+
 const rootElement = document.getElementById("root");
 
 let _state = [];
 let index = 0;
 const myUseState = (initState) => {
   let currentIndex = index;
-  _state[currentIndex] = ( _state[currentIndex] === undefined ? initState : _state[currentIndex]);
+  _state[currentIndex] = (_state[currentIndex] === undefined ? initState : _state[currentIndex]);
   const setState = (newState) => {
     _state[currentIndex] = newState
     index = 0
     render()
   }
   index += 1
-  return [_state[currentIndex],setState]
+  return [_state[currentIndex], setState]
 }
 
-const render = () => ReactDOM.render(<App />, rootElement);
+const render = () => ReactDOM.render(<App/>, rootElement);
 
 function App() {
   const [n, setN] = myUseState(0);

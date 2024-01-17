@@ -1,5 +1,5 @@
 ---
-title: jdk8新特性
+title: Jdk8新特性
 date: 2022-02-02
 category: java
 ---
