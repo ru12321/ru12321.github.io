@@ -4,23 +4,51 @@ export const sidebarConfig = sidebar({
 
     "/tech/": [
       {
-        text: "java语言",
+        text: "计算机基础",
         icon: "java",
-        prefix: "java/",
+        prefix: "computer_basic/",
         collapsible: true,
         children: "structure"
       },
       {
-        text: "spring框架",
-        icon: "hot",
-        prefix: "spring/",
+        text: "数据库存储",
+        icon: "java",
+        prefix: "database/",
         collapsible: true,
         children: "structure"
       },
       {
         text: "部署运维",
         icon: "build",
-        prefix: "ops/",
+        prefix: "dev_ops/",
+        collapsible: true,
+        children: "structure"
+      },
+      {
+        text: "日常记录",
+        icon: "build",
+        prefix: "glodon_records/",
+        collapsible: true,
+        children: "structure"
+      },
+      {
+        text: "java语言",
+        icon: "java",
+        prefix: "java_basic/",
+        collapsible: true,
+        children: "structure"
+      },
+      {
+        text: "中间件技术",
+        icon: "java",
+        prefix: "middleware_framework/",
+        collapsible: true,
+        children: "structure"
+      },
+      {
+        text: "spring框架",
+        icon: "hot",
+        prefix: "spring_framework/",
         collapsible: true,
         children: "structure"
       },
@@ -28,6 +56,13 @@ export const sidebarConfig = sidebar({
         text: "系统设计",
         icon: "hot",
         prefix: "system_design/",
+        collapsible: true,
+        children: "structure"
+      },
+      {
+        text: "前端框架",
+        icon: "hot",
+        prefix: "web_framework/",
         collapsible: true,
         children: "structure"
       },
