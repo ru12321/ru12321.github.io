@@ -1,3 +1,9 @@
+---
+title: Vue
+date: 2024-01-17
+category: javascript & vue
+---
+
 # 小知识
 
 * Vue标配

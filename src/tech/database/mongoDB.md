@@ -1,3 +1,9 @@
+---
+title: MongoDB
+date: 2022-08-08
+category: database
+---
+
 # MongoDB基础
 
 文档地址: https://docs.mongodb.com/manual/

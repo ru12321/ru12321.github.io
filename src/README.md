@@ -1,7 +1,7 @@
 ---
 article: false
 home: true
-layout: Blog
+layout: BlogHome
 icon: home
 title: 博客主页
 heroImage: /logo.svg

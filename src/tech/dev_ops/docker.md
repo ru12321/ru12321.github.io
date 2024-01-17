@@ -1,7 +1,7 @@
 ---
-title: docker
+title: Docker
 date: 2023-03-27
-category: docker && k8s
+category: devops
 ---
 
 ## 教程网址
