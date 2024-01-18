@@ -58,7 +58,15 @@ export default hopeTheme({
     orange: "#fb9b5f",
   },
 
+  //读取的标题的深度
   headerDepth: 3,
+  //加密文件配置
+  encrypt:{
+    config: {
+      // 这会加密整个 guide 目录，并且两个密码都是可用的
+      "/about_me/博客评论系统.html": ["ruyiruyi77"],
+    },
+  },
 
   plugins: {
     blog: true,
