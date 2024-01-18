@@ -82,7 +82,7 @@ export default hopeTheme({
        * Using Waline
        */
       provider: "Waline",
-      serverURL: "https://rblog-comment-5ql379eox-ru12321.vercel.app/",
+      serverURL: "https://comment.goruyi.top",
       login: 'disable',
     },
     mdEnhance: {
