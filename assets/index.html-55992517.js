@@ -1,0 +1,1 @@
+import{_ as t,W as n,X as s,Y as e}from"./framework-715d567f.js";const c={},o=e("div",{class:"hint-container info"},[e("p",{class:"hint-container-title"},"相关信息"),e("p",null,"关于我")],-1),_=e("p",null,"一个平平无奇的碳基生物",-1),i=[o,_];function l(a,r){return n(),s("div",null,i)}const f=t(c,[["render",l],["__file","index.html.vue"]]);export{f as default};

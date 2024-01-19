@@ -1,0 +1,1 @@
+import{_ as t,W as n,X as c,Y as e}from"./framework-715d567f.js";const s={},o=e("div",{class:"hint-container info"},[e("p",{class:"hint-container-title"},"相关信息"),e("p",null,"走过的路")],-1),i=[o];function _(a,l){return n(),c("div",null,i)}const d=t(s,[["render",_],["__file","index.html.vue"]]);export{d as default};
