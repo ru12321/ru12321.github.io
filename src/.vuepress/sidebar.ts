@@ -33,14 +33,14 @@ export const sidebarConfig = sidebar({
       },
       {
         text: "java语言",
-        icon: "link",
+        icon: "java",
         prefix: "java_basic/",
         collapsible: true,
         children: "structure"
       },
       {
         text: "中间件技术",
-        icon: "java",
+        icon: "link",
         prefix: "middleware_framework/",
         collapsible: true,
         children: "structure"

@@ -28,7 +28,7 @@ export default hopeTheme({
 
   blog: {
     description: "一个菜鸟",
-    intro: "/me",
+    intro: "/about_me",
     medias: {
       Gitee: "https://example.com",
       GitHub: "https://example.com",
