@@ -5,14 +5,14 @@ export const sidebarConfig = sidebar({
     "/tech/": [
       {
         text: "计算机基础",
-        icon: "java",
+        icon: "computer",
         prefix: "computer_basic/",
         collapsible: true,
         children: "structure"
       },
       {
         text: "数据库存储",
-        icon: "java",
+        icon: "mysql",
         prefix: "database/",
         collapsible: true,
         children: "structure"
@@ -26,14 +26,14 @@ export const sidebarConfig = sidebar({
       },
       {
         text: "日常记录",
-        icon: "build",
+        icon: "mark",
         prefix: "glodon_records/",
         collapsible: true,
         children: "structure"
       },
       {
         text: "java语言",
-        icon: "java",
+        icon: "link",
         prefix: "java_basic/",
         collapsible: true,
         children: "structure"
@@ -54,14 +54,14 @@ export const sidebarConfig = sidebar({
       },
       {
         text: "系统设计",
-        icon: "hot",
+        icon: "OS",
         prefix: "system_design/",
         collapsible: true,
         children: "structure"
       },
       {
         text: "前端框架",
-        icon: "hot",
+        icon: "javascript",
         prefix: "web_framework/",
         collapsible: true,
         children: "structure"
