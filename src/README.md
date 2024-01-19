@@ -4,10 +4,10 @@ home: true
 layout: BlogHome
 icon: home
 title: 博客主页
-heroImage: /ruyi.svg
-heroText: 久如意
+heroImage: /homeIcon.svg
+heroText: 万事如意
 heroFullScreen: true
-tagline: Enjoy Yourself
+tagline: Enjoy Yourself In 2024
 projects:
 - icon: project
   name: 项目名称
@@ -34,8 +34,4 @@ projects:
   desc: 伙伴详细介绍
   link: https://你的伙伴链接
 
-- icon: /logo.svg
-  name: 自定义项目
-  desc: 自定义详细介绍
-  link: https://你的自定义链接
 ---
