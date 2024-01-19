@@ -7,17 +7,20 @@ import {sidebarConfig} from "./sidebar";
 
 export default hopeTheme({
   //导航栏左侧logo图片
-  logo: "/logo.svg",
+  logo: "/ruyi.svg",
   //github导航仓库链接
-  repo: "ru12321",
+  repo: "ru12321/ru12321.github.io/",
+  //文档所在分支
+  docsBranch: "/master",
   //文档在仓库中的目录
-  docsDir: "docs",
-
-  hostname: "https://mister-hope.github.io",
+  docsDir: "/src",
+  //当前网站部署到的域名
+  hostname: "http://gotuyi.top",
   author: {
     name: "Mr.Ru",
-    url: "https://github.com/ru12321",
+    email: "1075348489@qq.com"
   },
+  favicon:"/ruyi.svg",
   navbar: navbarConfig,
   sidebar: sidebarConfig,
   //每个文章标题下的页面信息展示
