@@ -3,13 +3,13 @@ index: false
 
 icon: profile
 
-title: who am i？
+title: 本人
 
 ---
 
-::: info info标题
+::: info
 
-我是info内容
+关于我
 
 :::
 
