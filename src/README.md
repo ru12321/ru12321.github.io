@@ -4,8 +4,8 @@ home: true
 layout: BlogHome
 icon: home
 title: 博客主页
-heroImage: /logo.svg
-heroText: 天上人间
+heroImage: /ruyi.svg
+heroText: 久如意
 heroFullScreen: true
 tagline: Enjoy Yourself
 projects:
