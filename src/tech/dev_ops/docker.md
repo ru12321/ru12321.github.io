@@ -18,6 +18,22 @@ Docker 使用 **Google 公司推出的 Go 语言** 进行开发实现，基于 L
 
 ==Docker 在容器的基础上，进行了进一步的封装，从文件系统、网络互联到进程隔离等等，极大的简化了容器的创建和维护。使得 Docker 技术比虚拟机技术更为轻便、快捷。==
 
+## docker架构图解
+
+![image-20240221142033670](https://typora-imgbed-mrru.oss-cn-chengdu.aliyuncs.com/ruyb/202402211420778.png)
+
+
+
+* dokcer客户端：允许连接到docker服务端，输入各种命令；类似使用各种客户端工具来连接mysql，输入命令；
+
+* docker服务端：就是docker的后台守护进程，接收客户端的各种命令；类似mysql的后台服务；
+
+![image-20240221142502091](https://typora-imgbed-mrru.oss-cn-chengdu.aliyuncs.com/ruyb/202402211425141.png)
+
+!![image-20240221142753589](https://typora-imgbed-mrru.oss-cn-chengdu.aliyuncs.com/ruyb/202402211427710.png)]
+
+
+
 ## 2.为什么用docker
 
 ① 更高效的利用系统资源：由于容器不需要进行硬件虚拟以及运行完整操作系统等额外开销，Docker 对系统资源的利用率更高。
@@ -94,7 +110,7 @@ Docker 设计时，充分利用 Union FS 的技术，将其设计为分层存储
 
 - UnionFS（联合文件系统）:
 
-  Union文件系统是一种分层，轻量级并且高性能的文件系统，它支持对文件系统的修改作为一次提交来一层层的叠加，同时可以将不同目录挂载到同一个虚拟文件系统下。Union文件系统是Docker镜像的基础。这种文件系统特性:就是一次同时加载多个文件系统，但从外面看起来，只能看到一个文件系统，联合加载会把各层文件系统叠加起来，这样最终的文件系统会包含所有底层的文件和目录 。	
+  Union文件系统是一种分层，轻量级并且高性能的文件系统，它支持对文件系统的修改作为一次提交来一层层的叠加，同时可以将不同目录挂载到同一个虚拟文件系统下。Union文件系统是Docker镜像的基础。这种文件系统特性:就是**一次同时加载多个文件系统**，但从外面看起来，只能看到一个文件系统，联合加载会把各层文件系统叠加起来，这样**最终的文件系统会包含所有底层的文件和目录** 。	
 
 #### Docker镜像原理
 
@@ -110,9 +126,15 @@ Docker 设计时，充分利用 Union FS 的技术，将其设计为分层存储
 
 #### 为什么docker镜像要采用这种分层结构呢?
 
-> `最大的一个好处就是资源共享`
+> `最大的一个好处就是资源共享`，复用公共层
 
 比如：**有多个镜像都是从相同的base镜像构建而来的，那么宿主机只需在磁盘中保存一份base镜像。同时内存中也只需要加载一份base镜像，就可以为所有容器服务了。而且镜像的每一层都可以被共享**。Docker镜像都是只读的。当容器启动时，一个新的可写层被加载到镜像的顶部。这一层通常被称为容器层，容器层之下都叫镜像层。
+
+![image-20240221154108150](https://typora-imgbed-mrru.oss-cn-chengdu.aliyuncs.com/ruyb/202402211541241.png)
+
+
+
+
 
 ### 容器(Container)
 
@@ -134,6 +156,8 @@ Docker 设计时，充分利用 Union FS 的技术，将其设计为分层存储
 
 ## 5.全局命令
 
+![image-20240221145152645](https://typora-imgbed-mrru.oss-cn-chengdu.aliyuncs.com/ruyb/202402211451686.png)
+
 `service docker start`：wsl2启动docker： （必须在root下！ sudo su -）
 
 `docker -v` ：查看docker版本
@@ -145,6 +169,8 @@ Docker 设计时，充分利用 Union FS 的技术，将其设计为分层存储
 密码  glodonUser123!@#
 
 ## 6.镜像命令
+
+`docker build -t 新镜像名字:TAG .` 		   制作镜像，注意最后的.代表Dockerfile上下文	
 
 `docker image ls tomcat` 根据仓库名列出部分镜像
 
@@ -205,8 +231,6 @@ docker pull [选项] [Docker Registry 地址[:端口号]/]仓库名[:标签]
 
 * 每一个容器都是一个精简版的linux系统，里面运行着一个服务
 
----
-
 `docker ps` 查看正在运行的容器
 
 ```txt
@@ -252,7 +276,7 @@ NAMES				容器名字，具有唯一性
 
 `docker cp /etc/hosts 容器名或容器id:/opt`	 拷贝宿主机的hosts文件到容器的/opt目录下
 
-`docker cp 容器名或容器id:/opt/a.sh /tmp`		拷贝容器的a.sh文件到宿主机的/tmp路径下
+`docker cp 容器名或容器id:/opt/a.sh /tmp`		**拷贝容器的a.sh文件到宿主机的/tmp路径下**
 
 `docker logs 容器名`          查看容器日志
 
@@ -284,7 +308,7 @@ NAMES				容器名字，具有唯一性
   注意: 这种方式会**将容器路径的原始内容全部清空,始终以宿主机路径为主**
 
   ```bash
-  docker run -d -p 8082:8080 --name tomcat02 -v /root/apps/:/usr/local/tomcat/webapps:ro
+  docker run -d -p --privileged=true 8082:8080 --name tomcat02 -v /root/apps/:/usr/local/tomcat/webapps:ro
   ```
 
 * ro选项 只能用在容器的路径后面，ro表示宿主机的目录改变只能影响到容器，容器不能影响到宿主机
@@ -365,6 +389,8 @@ root@5f8e27802f77:/usr/local/tomcat# curl http://172.17.0.3:8080
 ### 自定义网桥
 
 1.docker网桥类型，有三种bridge、host、none
+
+![image-20240226151415576](https://typora-imgbed-mrru.oss-cn-chengdu.aliyuncs.com/ruyb/202402261514634.png)
 
 * 允许连接到同一网桥网络的容器进行通信，同时提供与未连接到该网桥网络的容器的隔离
 
@@ -509,6 +535,8 @@ b.启动之后容器加入到某个网络中
 
 ## 10.Dockerfile
 
+相当于对某基础镜像做了点功能加强或者改变，然后commit一次，**再加点东西再commit一次**，避免重复的commit，将所有加强的动作集中到一个Dockerfile中。
+
 > 注意D大写f小写，是Dockerfile而不是dockerFile
 
 ![image-20230108154217367](https://typora-imgbed-mrru.oss-cn-chengdu.aliyuncs.com/ruyb/202303201502003.png)
@@ -551,14 +579,14 @@ b.启动之后容器加入到某个网络中
 | -------------- | ------------------------------------------------------------ |
 | **FROM**       | **当前镜像是基于哪个镜像的** `第一个指令必须是FROM`          |
 | MAINTAINER     | 镜像维护者的姓名和邮箱地址                                   |
-| **RUN**        | **构建镜像时需要运行的指令**                                 |
+| **RUN**        | **构建镜像时需要运行的指令**，==docker build时就会执行RUN命令== |
 | **EXPOSE**     | **当前容器对外暴露出的端口号**                               |
 | **WORKDIR**    | **指定在创建容器后，终端默认登录进来的工作目录，一个落脚点** |
-| **ENV**        | **用来在构建镜像过程中设置环境变量**                         |
+| **ENV**        | **用来在构建镜像过程中设置环境变量**，定义变量，格式：ENV A  A的值 |
 | **ADD**        | **将宿主机目录下的文件拷贝进镜像且ADD命令会自动处理URL和解压tar包** |
 | **COPY**       | **类似于ADD，拷贝文件和目录到镜像中<br/>将从构建上下文目录中<原路径>的文件/目录复制到新的一层的镜像内的<目标路径>位置** |
 | **VOLUME**     | **容器数据卷，用于数据保存和持久化工作**                     |
-| **CMD**        | **指定一个容器启动时要运行的命令<br/>Dockerfile中可以有多个CMD指令，但只有最后一个生效，CMD会被docker run之后的参数替换** |
+| **CMD**        | **指定一个容器启动时要运行的命令<br/><br />==docker run时就会执行CMD命令==<br />  Dockerfile中可以有多个CMD指令，但只有最后一个生效，CMD会被docker run之后的参数替换** |
 | **ENTRYPOINT** | **指定一个容器启动时要运行的命令<br/>ENTRYPOINT的目的和CMD一样，都是在指定容器启动程序及其参数** |
 
 
@@ -583,7 +611,7 @@ b.启动之后容器加入到某个网络中
 
 #### 2.构建自己的镜像
 
-`docker build -t ruybos:01 .`  注意一定要加上最后的.；
+`docker build -t ruybos:01 .`  注意一定要加上最后的；
 
 可以看到，因为Dockerfile中只有一个FROM指令，所以它的最终镜像id和centos一样；
 
@@ -671,9 +699,55 @@ WORKDIR b   #相对路径
 
 #### 9.CMD和ENTRYPOINT
 
-语法1：直接命令方式
+==docker build时就会执行RUN命令==
+
+==docker run时就会执行CMD命令==
 
 `java -jar ems.jar`
 
 语法2：json数组方式 **推荐**
+
+* 两者组合使用
+
+![image-20240226094440503](https://typora-imgbed-mrru.oss-cn-chengdu.aliyuncs.com/ruyb/202402260944577.png)
+
+### 再次实操
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

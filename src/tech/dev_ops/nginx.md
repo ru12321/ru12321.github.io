@@ -57,7 +57,12 @@ curl -e "http://baidu.com" -I http://192.168.44.101/img/logo.png
 
 12.date 查看机器时间
 
+13.校准服务器时间
 
+```txt
+sudo yum install ntp 安装
+sudo systemctl start ntpd  重启ntp服务
+```
 
 
 
