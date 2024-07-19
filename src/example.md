@@ -9,7 +9,7 @@ comment: true
 
 ---
 
-测试页面，用来记录一些页面配置
+测试页面，用来记录一些页面配置2
 
 index: false  不展示在侧边栏，不收集到children中
 comment: false  不显示评论
