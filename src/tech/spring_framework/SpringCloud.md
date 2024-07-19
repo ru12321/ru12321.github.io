@@ -840,7 +840,7 @@ spring:
             - Path=/product/*
             - After=2023-03-13T14:07:53.714+08:00[Asia/Shanghai]
           filters:
-            - AddRequestHeader=User-Name, ruyb
+            - AddRequestHeader=User-Name, tuyb
 ```
 
 #### 常见路由predicate  （断言、验证）

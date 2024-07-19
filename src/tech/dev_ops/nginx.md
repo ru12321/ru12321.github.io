@@ -396,7 +396,7 @@ linxu内核直接复制文件的技术
 
 1. 多用户的二级域名
 
-nginx拿到完整的url（ruyb.xxx.com），拆分得到二级域名的值（ruyb），nginx反向代理去数据库查到ruyb的个人信息，再转给nginx，nginx再返回给页面
+nginx拿到完整的url（tuyb.xxx.com），拆分得到二级域名的值（tuyb），nginx反向代理去数据库查到tuyb的个人信息，再转给nginx，nginx再返回给页面
 
 2. 短网址
 

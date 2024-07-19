@@ -44,7 +44,7 @@ DNS1=8.8.8.8
 vim /etc/hostname
 
 ```
-ruyb101
+tuyb101
 ```
 
 #### 3.配置ip和host映射
@@ -52,9 +52,9 @@ ruyb101
 vim /etc/hosts
 
 ```ssh
-192.168.10.101 ruyb101
-192.168.10.102 ruyb102
-192.168.10.103 ruyb103
+192.168.10.101 tuyb101
+192.168.10.102 tuyb102
+192.168.10.103 tuyb103
 ```
 
 #### 4.配置防火墙，重启
@@ -143,13 +143,13 @@ scp   -r    $pdir/$fname       $user@$host:$pdir/$fname
 
 ```bash
 #101上操作，给102拷贝文件，输入yes和密码
-scp -r /usr/local/jdk1.8.0_271/ root@ruyb102:/usr/local
+scp -r /usr/local/jdk1.8.0_271/ root@tuyb102:/usr/local
 
 #103上操作，从101拷贝文件：
- scp -r root@ruyb101:/usr/local/jdk1.8.0_271/ ./
+ scp -r root@tuyb101:/usr/local/jdk1.8.0_271/ ./
  
 #102操作，从101拷贝文件到103
-scp -r root@ruyb101:/usr/local/jdk1.8.0_271/ root@ruyb103:/usr/local/jdktmp
+scp -r root@tuyb101:/usr/local/jdk1.8.0_271/ root@tuyb103:/usr/local/jdktmp
 ```
 
 ##### rsync 远程同步工具
@@ -193,7 +193,7 @@ vim xsync
 
 #脚本文件内容
 #2. 遍历集群所有机器
-for host in ruyb102 ruyb103
+for host in tuyb102 tuyb103
 do
     echo ====================  $host  ====================
     #3. 遍历所有目录，挨个发送
@@ -250,9 +250,9 @@ ssh-keygen -t sra
 
 #将公钥拷贝到要免密登录的目标机器上
 #这是在101机器上执行的命令，同理在102,103机器上也执行这三行命令
-ssh-copy-id ruyb101
-ssh-copy-id ruyb102
-ssh-copy-id ruyb103
+ssh-copy-id tuyb101
+ssh-copy-id tuyb102
+ssh-copy-id tuyb103
 ```
 
 中文官网https://kafka.apachecn.org/
@@ -303,7 +303,7 @@ broker.id=0
 log.dirs=/usr/local/kafka/datas
 
 #修改zk服务器地址
-zookeeper.connect=ruyb101:2181,ruyb102:2181,ruyb103:2181/kafka 
+zookeeper.connect=tuyb101:2181,tuyb102:2181,tuyb103:2181/kafka 
 ```
 
 配置环境变量
@@ -335,7 +335,7 @@ zk.sh，写在环境变量目录/usr/local/bin下，chmod +x zk.sh，source zk.s
 
 case $1 in
 "start"){
-        for i in ruyb101 ruyb102 ruyb103
+        for i in tuyb101 tuyb102 tuyb103
         do
                 echo  ------------- zookeeper $i 启动 ------------
                 ssh $i "/usr/local/zookeeper/bin/zkServer.sh start"
@@ -343,7 +343,7 @@ case $1 in
 }
 ;;
 "stop"){
-        for i in ruyb101 ruyb102 ruyb103
+        for i in tuyb101 tuyb102 tuyb103
         do
                 echo  ------------- zookeeper $i 停止 ------------
                 ssh $i "/usr/local/zookeeper/bin/zkServer.sh stop"
@@ -351,7 +351,7 @@ case $1 in
 }
 ;;
 "status"){
-        for i in ruyb101 ruyb102 ruyb103
+        for i in tuyb101 tuyb102 tuyb103
         do
                 echo  ------------- zookeeper $i 状态 ------------
                 ssh $i "/usr/local/zookeeper/bin/zkServer.sh status"
@@ -367,13 +367,13 @@ esac
 xcall jps
 
 
-=============== ruyb101 ===============
+=============== tuyb101 ===============
 8018 QuorumPeerMain
 13399 Jps
-=============== ruyb102 ===============
+=============== tuyb102 ===============
 100457 Jps
 95117 QuorumPeerMain
-=============== ruyb103 ===============
+=============== tuyb103 ===============
 101395 Jps
 96078 QuorumPeerMain
 ```
@@ -382,7 +382,7 @@ xcall脚本
 
 ```shell
 #!/bin/bash                                                                                                                                         
-for host in ruyb101 ruyb102 ruyb103
+for host in tuyb101 tuyb102 tuyb103
 do
         echo =============== $host ===============
         ssh $host jps

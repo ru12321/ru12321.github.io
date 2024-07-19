@@ -381,11 +381,11 @@ public static void predicate(String user,Predicate<String> predicate){
 @Test
 public void test03(){
         //lambda的原始写法
-        predicate("ruyb",str->{
-        return str.equals("ruyb");
+        predicate("tuyb",str->{
+        return str.equals("tuyb");
         });
         //lambda的简便写法
-        predicate("ruyb",str->str.equals("ruyb"));
+        predicate("tuyb",str->str.equals("tuyb"));
         }
 ```
 

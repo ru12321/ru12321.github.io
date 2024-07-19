@@ -196,7 +196,7 @@ MongoDB是一个`介于关系数据库和非关系数据库`之间的产品，�
   - 脚本方式
   
     ```sql
-    for(let i=0;i<100;i++){ 		  db.users.insert({"_id":i,"name":"ruyb_"+i,"age":25});
+    for(let i=0;i<100;i++){ 		  db.users.insert({"_id":i,"name":"tuyb_"+i,"age":25});
     }
     ```
 
@@ -313,17 +313,17 @@ MongoDB OR 条件语句使用了关键字 **$or**,语法格式如下：
 
 ### AND 和 OR 联合
 
-`类似SQL语句为：'where age >50 AND (name = 'ruyb1' OR name = 'ruyb2')'`
+`类似SQL语句为：'where age >50 AND (name = 'tuyb1' OR name = 'tuyb2')'`
 
 ```sql
-> db.集合名称.find({"age": {$gt:50}, $or: [{"name": "ruyb1"},{"name": "ruyb2"}]}).pretty();
+> db.集合名称.find({"age": {$gt:50}, $or: [{"name": "tuyb1"},{"name": "tuyb2"}]}).pretty();
 ```
 
 ### 数组中查询
 
 ```sql
 -- 测试数据
-> db.集合名称.insert({ "_id" : 100, "salary" : 2200, "likes" : [ "电视", "读书", "game" ], "name" : "ruyb_0" })
+> db.集合名称.insert({ "_id" : 100, "salary" : 2200, "likes" : [ "电视", "读书", "game" ], "name" : "tuyb_0" })
 -- 执行数组查询
 > db.users.find({likes:"电视"})
 -- $size 按照数组长度查询
@@ -335,7 +335,7 @@ MongoDB OR 条件语句使用了关键字 **$or**,语法格式如下：
 `类似 SQL 中为 'where name like '%name%''`
 
 ```sql
-> db.users.find({likes:/ruyb/});
+> db.users.find({likes:/tuyb/});
 ```
 
 `注意:在 mongoDB 中使用正则表达式可以是实现近似模糊查询功能`
@@ -361,7 +361,7 @@ MongoDB OR 条件语句使用了关键字 **$or**,语法格式如下：
 
 ```sql
 > db.集合名称.count();
-> db.集合名称.find({"name":"ruyb_0"}).count();
+> db.集合名称.find({"name":"tuyb_0"}).count();
 ```
 
 `类似于 SQL 语句为: 'select count(id) from ....'`
@@ -623,18 +623,18 @@ mongoTemplate面向对象设计，springframework.data.mongodb 提供了这些�
       userList1.forEach(System.out::println);
   
       //4.等值查询
-      Query query = Query.query(Criteria.where("name").is("ruyb3"));
+      Query query = Query.query(Criteria.where("name").is("tuyb3"));
       List<User> userList2 = mongoTemplate.find(query, User.class);
       userList2.forEach(System.out::println);
   
       //5.< > <= >= and 查询
-      Query query1 = Query.query(Criteria.where("salary").lt(1300).and("name").is("ruyb1"));
+      Query query1 = Query.query(Criteria.where("salary").lt(1300).and("name").is("tuyb1"));
       List<User> users = mongoTemplate.find(query1, User.class);
       users.forEach(System.out::println);
   
       //6.or
       Criteria criteria = new Criteria().orOperator(
-          Criteria.where("name").is("ruyb1"),
+          Criteria.where("name").is("tuyb1"),
           Criteria.where("salary").lt(5000)
       );
       Query query2 = Query.query(criteria);
@@ -677,8 +677,8 @@ mongoTemplate面向对象设计，springframework.data.mongodb 提供了这些�
  //文档添加
 @Test
 public void testAddDoc(){
-    User ruyb1 = new User(100, "ruyb1", 1200.0, new Date());
-    mongoTemplate.save(ruyb1);
+    User tuyb1 = new User(100, "tuyb1", 1200.0, new Date());
+    mongoTemplate.save(tuyb1);
     //mongoTemplate.insert();
 }
 ```
@@ -700,8 +700,8 @@ public class User {
 
 @Test
 public void testAddDoc(){
-    User ruyb2 = new User(200, "ruyb2", 1200.0, new Date());
-    mongoTemplate.save(ruyb2);
+    User tuyb2 = new User(200, "tuyb2", 1200.0, new Date());
+    mongoTemplate.save(tuyb2);
 }
 ```
 
@@ -722,8 +722,8 @@ org.springframework.dao.DuplicateKeyException: Write operation error on server 1
 批处理insert
 
 ```java
-List<User> userList = Arrays.asList(new User(300, "ruyb3", 1300.0, new Date()),
-                                    new User(400, "ruyb4", 1400.0, new Date()));
+List<User> userList = Arrays.asList(new User(300, "tuyb3", 1300.0, new Date()),
+                                    new User(400, "tuyb4", 1400.0, new Date()));
 
 //参数1：批量数据，参数2：指定放入哪个集合
 mongoTemplate.insert(userList, User.class);
@@ -744,10 +744,10 @@ mongoTemplate.insert(userList, User.class);
 @Test
 public void  testUpdate(){
   //1.更新条件
-  Query query = Query.query(Criteria.where("name").is("ruyb2"));
+  Query query = Query.query(Criteria.where("name").is("tuyb2"));
   //2.更新内容
   Update update = new Update();
-  update.set("name","ruyb200");
+  update.set("name","tuyb200");
 
   //单条更新
   mongoTemplate.updateFirst(query, update, User.class);
@@ -772,7 +772,7 @@ public void testDelete(){
   mongoTemplate.remove(new Query(),User.class);
   //条件删除
   mongoTemplate.remove(
-    Query.query(Criteria.where("name").is("ruyb200")),
+    Query.query(Criteria.where("name").is("tuyb200")),
     User.class
   );
 }
@@ -810,7 +810,7 @@ public class MongoRepositoryTest extends ApplicationTests {
         for (int i = 0; i < 1; i++) {
             User user = new User();
             user.setId("001");
-            user.setName("ruyb_" + i);
+            user.setName("tuyb_" + i);
             user.setSalary(2000.0 + 100.0 * i);
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             Date date = dateFormat.parse("2022-09-15");
@@ -851,7 +851,7 @@ public class MongoRepositoryTest extends ApplicationTests {
     @Test
     public void findByCondition() throws ParseException {
         User user = new User();
-        user.setName("ruyb_0");
+        user.setName("tuyb_0");
         //user.setId("001");
         //user.setSalary(2000.0);
         //SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -870,7 +870,7 @@ public class MongoRepositoryTest extends ApplicationTests {
         // 改变默认大小写忽略方式：忽略大小写
         ExampleMatcher matcher = ExampleMatcher.matching().withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING).withIgnoreCase(true);
         User user = new User();
-        user.setName("ruyb");
+        user.setName("tuyb");
         //模糊查询条件
         Example<User> userExample = Example.of(user, matcher);
         List<User> userList = userRepository.findAll(userExample);
@@ -884,7 +884,7 @@ public class MongoRepositoryTest extends ApplicationTests {
         PageRequest pageRequest2 = PageRequest.of(1, 1);
 
         User user = new User();
-        user.setName("ruyb_0");
+        user.setName("tuyb_0");
 
         Example<User> example = Example.of(user);
         Page<User> all = userRepository.findAll(example, pageRequest);
@@ -1119,7 +1119,7 @@ public void testFindField03() {
 
 ```shell
 #username是String类型字段，长度444（为下面对比查询整条数据的效率）
-#{username=ruyb_4还记得看干啥的萨科技和打开的骄傲看到了扩大时刻到了哈萨我quiet请问IU让我去高...}
+#{username=tuyb_4还记得看干啥的萨科技和打开的骄傲看到了扩大时刻到了哈萨我quiet请问IU让我去高...}
 查询一条数据的时间：705 
 ```
 

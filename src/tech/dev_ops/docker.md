@@ -247,7 +247,7 @@ NAMES				容器名字，具有唯一性
 
 `docker ps -aq` 返回所有容器id
 
-`docker run -d -p 8081:8080 --name=tomcat_ruyb tomcat:8.0` 启动容器
+`docker run -d -p 8081:8080 --name=tomcat_tuyb tomcat:8.0` 启动容器
 
 ```txt
 -d				后台运行服务
@@ -411,12 +411,12 @@ root:/# docker network ls
 NETWORK ID     NAME      DRIVER    SCOPE
 daf4e6a263a3   bridge    bridge    local
 3fb3be082705   host      host      local
-b10c10f01429   n-ruyb    bridge    local
+b10c10f01429   n-tuyb    bridge    local
 a5a612bdf0dc   none      null      local
-root:/# docker network inspect n-ruyb
+root:/# docker network inspect n-tuyb
 [
     {
-        "Name": "n-ruyb",
+        "Name": "n-tuyb",
         "Id": "b10c10f01429dea1dcb730e01457ed0b61ab6dc11d064180c3cd78995f64d8db",
         "Created": "2022-12-28T17:58:51.608529755+08:00",
         "Scope": "local",
@@ -450,10 +450,10 @@ root:/#
 * 在自定义网络创建容器两个容器后：
 
 ```bash
-root:/# docker network inspect n-ruyb
+root:/# docker network inspect n-tuyb
 [
     {
-        "Name": "n-ruyb",
+        "Name": "n-tuyb",
         "Id": "b10c10f01429dea1dcb730e01457ed0b61ab6dc11d064180c3cd78995f64d8db",
         "Created": "2022-12-28T17:58:51.608529755+08:00",
         "Scope": "local",
@@ -510,7 +510,7 @@ rootp1:/#
 `docker network create 网络名称`  
 
 ```bash
-docker run -d -p 8081:8080 --name tomcat02 --network n-ruyb tomcat:8.0
+docker run -d -p 8081:8080 --name tomcat02 --network n-tuyb tomcat:8.0
 ```
 
 自定义网桥后就可以通过名称来访问容器
@@ -609,7 +609,7 @@ b.启动之后容器加入到某个网络中
 
 #### 2.构建自己的镜像
 
-`docker build -t ruybos:01 .`  注意一定要加上最后的；
+`docker build -t tuybos:01 .`  注意一定要加上最后的；
 
 可以看到，因为Dockerfile中只有一个FROM指令，所以它的最终镜像id和centos一样；
 
@@ -618,7 +618,7 @@ REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
 ubuntu        18.04     251b86c83674   4 weeks ago     63.1MB
 hello-world   latest    feb5d9fea6a5   15 months ago   13.3kB
 centos        latest    5d0da3dc9764   15 months ago   231MB
-ruybos        01        5d0da3dc9764   15 months ago   231MB
+tuybos        01        5d0da3dc9764   15 months ago   231MB
 tomcat        8.0       ef6a7c98d192   4 years ago     356MB
 ```
 
@@ -632,12 +632,12 @@ ps:因为centos的latest镜像无法安装vim，所以FROM的参数换为centos:
 
 添加指令`RUN yum install -y vim`
 
-构建镜像`docker build -t ruybos:02 .`
+构建镜像`docker build -t tuybos:02 .`
 
 创建容器，验证
 
 ```shell
-docker run -it ruybos:02
+docker run -it tuybos:02
 touch r.txt
 vim r.txt
 ```
