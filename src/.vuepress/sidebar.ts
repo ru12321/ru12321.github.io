@@ -27,7 +27,7 @@ export const sidebarConfig = sidebar({
       {
         text: "日常记录",
         icon: "mark",
-        prefix: "glodon_records/",
+        prefix: "daily_records/",
         collapsible: true,
         children: "structure"
       },
