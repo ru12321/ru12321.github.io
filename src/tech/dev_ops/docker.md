@@ -166,8 +166,6 @@ Docker 设计时，充分利用 Union FS 的技术，将其设计为分层存储
 
 `docker login --username=zhangb-l@bimcop registry.cn-beijing.aliyuncs.com`  设置登录公司镜像
 
-密码  glodonUser123!@#
-
 ## 6.镜像命令
 
 `docker build -t 新镜像名字:TAG .` 		   制作镜像，注意最后的.代表Dockerfile上下文	
@@ -324,7 +322,7 @@ docker run -d -p 8081:8080 --name tomcat01 -v aaaa:/usr/local/tomcat/webapps tom
 aaaa是docker在宿主机自建的目录，docker自己会创建这个别名并维护
 
 ```bash
-root@glodon-p1:~# find /var -name aaaa
+
  /var/lib/docker/volumes/aaaa
 ```
 
@@ -378,7 +376,7 @@ docker network inspect ems
 
 ```bash
 #进入tomcat01容器，对tomcat02容器进行通信访问
-root@glodon-p1:~# docker exec -it tomcat01 bash
+root:~# docker exec -it tomcat01 bash
 root@5f8e27802f77:/usr/local/tomcat# curl http://172.17.0.3:8080
 ```
 
@@ -395,7 +393,7 @@ root@5f8e27802f77:/usr/local/tomcat# curl http://172.17.0.3:8080
 * 允许连接到同一网桥网络的容器进行通信，同时提供与未连接到该网桥网络的容器的隔离
 
 ```bash
-root@glodon-p1:/# docker network ls
+p1:/# docker network ls
 NETWORK ID     NAME      DRIVER    SCOPE
 daf4e6a263a3   bridge    bridge    local
 3fb3be082705   host      host      local
@@ -409,13 +407,13 @@ a5a612bdf0dc   none      null      local
 * 在自定义网络创建容器前
 
 ```bash
-root@glodon-p1:/# docker network ls
+root:/# docker network ls
 NETWORK ID     NAME      DRIVER    SCOPE
 daf4e6a263a3   bridge    bridge    local
 3fb3be082705   host      host      local
 b10c10f01429   n-ruyb    bridge    local
 a5a612bdf0dc   none      null      local
-root@glodon-p1:/# docker network inspect n-ruyb
+root:/# docker network inspect n-ruyb
 [
     {
         "Name": "n-ruyb",
@@ -446,13 +444,13 @@ root@glodon-p1:/# docker network inspect n-ruyb
         "Labels": {}
     }
 ]
-root@glodon-p1:/#
+root:/#
 ```
 
 * 在自定义网络创建容器两个容器后：
 
 ```bash
-root@glodon-p1:/# docker network inspect n-ruyb
+root:/# docker network inspect n-ruyb
 [
     {
         "Name": "n-ruyb",
@@ -498,7 +496,7 @@ root@glodon-p1:/# docker network inspect n-ruyb
         "Labels": {}
     }
 ]
-root@glodon-p1:/#
+rootp1:/#
 ```
 
 4.删除一个网络
@@ -518,7 +516,7 @@ docker run -d -p 8081:8080 --name tomcat02 --network n-ruyb tomcat:8.0
 自定义网桥后就可以通过名称来访问容器
 
 ```bash
-root@glodon-p1:/# docker exec -it tomcat02 bash
+root-p1:/# docker exec -it tomcat02 bash
 #访问tomcat01的地址 获得默认的jsp页面代码
 root@759dc488ad73:/usr/local/tomcat# curl http://tomcat01:8080
 ```

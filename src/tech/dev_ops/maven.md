@@ -453,12 +453,12 @@ mvn deploy 用来将项目生成的构件分发到远程Maven仓库
     <repository>
         <id>estate-release</id>
         <name>estate-release</name>
-        <url>http://packages.glodon.com/artifactory/maven-estate-releases/</url>
+        <url>http://packages/maven-estate-releases/</url>
     </repository>
     <snapshotRepository>
         <id>estate-snapshot</id>
         <name>estate-snapshot</name>
-        <url>http://packages.glodon.com/artifactory/maven-estate-snapshots/</url>
+        <url>http://packages/artifactory/maven-estate-snapshots/</url>
     </snapshotRepository>
 </distributionManagement>
 ```

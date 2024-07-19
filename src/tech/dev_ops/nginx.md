@@ -27,6 +27,8 @@ category: devops
 
 5.`ps -ef | grep nginx` 过滤出nginx进程
 
+   `netstat -tulnp | grep 8080` 查看8080端口上的进程活动
+
 6.linux一般安装应用到`/usr/local`
 
 7.`telnet ip 端口` 验证**端口**是否开通，必须加上端口号 eg: `telnet 192.168.10.101 80`
@@ -317,10 +319,10 @@ http {
         //当前主机的监听端口号
         listen       80;
 
-    	//当前主机的主机名或域名 http://glodon.com
+    	//当前主机的主机名或域名 http://.com
         server_name  localhost;
     
-        // 一个url是http://glodon.com/xxoo/index.html
+        // 一个url是http://.com/xxoo/index.html
     	//uri是/xxoo/index.html
 		//匹配路径，/代表uri，是资源的意思
         location / {
@@ -394,7 +396,7 @@ linxu内核直接复制文件的技术
 
 1. 多用户的二级域名
 
-nginx拿到完整的url（ruyb.glodon.com），拆分得到二级域名的值（ruyb），nginx反向代理去数据库查到ruyb的个人信息，再转给nginx，nginx再返回给页面
+nginx拿到完整的url（ruyb.xxx.com），拆分得到二级域名的值（ruyb），nginx反向代理去数据库查到ruyb的个人信息，再转给nginx，nginx再返回给页面
 
 2. 短网址
 

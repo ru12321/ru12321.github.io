@@ -103,14 +103,12 @@ MongoDB是一个`介于关系数据库和非关系数据库`之间的产品，�
   > show dbs;//推荐用
   ```
 
-  ![image-20211214114636572](https://picbed-for-mrru-mdfile.oss-cn-chengdu.aliyuncs.com/mrru-glodon/image-20211214114636572.png)
-
   `注意:`
 
   - **`admin`**： 从权限的角度来看，这是"root"数据库。要是将一个用户添加到这个数据库，这个用户自动继承所有数据库的权限。一些特定的服务器端命令也只能从这个数据库运行，比如列出所有的数据库或者关闭服务器。
   - **`local`**: 这个数据永远不会被复制，可以用来存储限于本地单台服务器的任意集合
   - **`config`**: 当Mongo用于分片设置时，config数据库在内部使用，用于保存分片的相关信息。
-
+  
 - 创建数据库
 
   ```sql
@@ -129,7 +127,7 @@ MongoDB是一个`介于关系数据库和非关系数据库`之间的产品，�
   > db.dropDatabase()
   ```
 
-  ![image-20211214115339513](https://picbed-for-mrru-mdfile.oss-cn-chengdu.aliyuncs.com/mrru-glodon/image-20211214115339513.png)
+  
 
 - 查看当前所在库
 
@@ -289,7 +287,7 @@ MongoDB是一个`介于关系数据库和非关系数据库`之间的产品，�
 
 注意：==这里的命令行查询可以封装成JSON格式作为参数传递==
 
-![image-20211214123631600](https://picbed-for-mrru-mdfile.oss-cn-chengdu.aliyuncs.com/mrru-glodon/image-20211214123631600.png)
+![image-20211214123631600](https://typora-imgbed-mrru.oss-cn-chengdu.aliyuncs.com/ruyb/202404191830513.png)
 
 ### AND
 
@@ -393,7 +391,7 @@ $type操作符是基于BSON类型来检索集合中匹配的数据类型，并�
 
 MongoDB 中可以使用的类型如下表所示：
 
-![image-20211214125324193](https://picbed-for-mrru-mdfile.oss-cn-chengdu.aliyuncs.com/mrru-glodon/image-20211214125324193.png)
+![image-20211214125324193](https://typora-imgbed-mrru.oss-cn-chengdu.aliyuncs.com/ruyb/202404191829663.png)
 
 - 如果想获取 "col" 集合中 title 为 String 的数据，你可以使用以下命令：
 
@@ -421,7 +419,7 @@ db.col.find({"tags" : {$type : 'array'}}).pretty();
 
 ### 原理
 
-![image-20211220093934250](https://picbed-for-mrru-mdfile.oss-cn-chengdu.aliyuncs.com/mrru-glodon/image-20211220093934250.png)
+![image-20211220093934250](https://typora-imgbed-mrru.oss-cn-chengdu.aliyuncs.com/ruyb/202404191829878.png)
 
 从根本上说，MongoDB中的索引与其他数据库系统中的索引类似。MongoDB在集合层面上定义了索引，并支持对MongoDB集合中的任何字段或文档的子字段进行索引。 **非常类似mysql**
 
@@ -489,7 +487,7 @@ createIndex() 接收可选参数，可选参数列表如下：
 > db.集合名称.createIndex({"title":1,"description":-1})
 ```
 
-![image-20211220122531182](https://picbed-for-mrru-mdfile.oss-cn-chengdu.aliyuncs.com/mrru-glodon/image-20211220122531182.png)
+![image-20211220122531182](https://typora-imgbed-mrru.oss-cn-chengdu.aliyuncs.com/ruyb/202404191829411.png)
 
 
 
@@ -501,7 +499,7 @@ MongoDB 中聚合(aggregate)主要用于处理数据(诸如统计平均值，求
 
 ### 常见聚合表达式
 
-![](https://picbed-for-mrru-mdfile.oss-cn-chengdu.aliyuncs.com/mrru-glodon/image-20211214131110733.png)
+![](https://typora-imgbed-mrru.oss-cn-chengdu.aliyuncs.com/ruyb/202404191829374.png)
 
 
 
@@ -539,13 +537,12 @@ Spring Data : `Spring 数据框架 `：封装集成了大多数数据库的操�
 
 ```properties
 # 连接到Mongo,mongodb没有开启任何安全协议 即没有开启用户名密码校验
-# mongodb(协议)://121.5.167.13(主机):27017(端口)/glodon(库名)
-spring.data.mongodb.uri=mongodb://127.0.0.1:27017/glodon
+spring.data.mongodb.uri=mongodb://127.0.0.1:27017/
 
 # mongodb 存在密码的配置
 #spring.data.mongodb.host=127.0.0.1
 #spring.data.mongodb.port=27017
-#spring.data.mongodb.database=glodon
+#spring.data.mongodb.database=
 #spring.data.mongodb.username=root
 #spring.data.mongodb.password=root
 ```
@@ -605,7 +602,7 @@ mongoTemplate面向对象设计，springframework.data.mongodb 提供了这些�
 
 - Criteria
 
-- ![image-20211221201808467](https://picbed-for-mrru-mdfile.oss-cn-chengdu.aliyuncs.com/mrru-glodon/image-20211221201808467.png)
+- ![image-20211221201808467](https://typora-imgbed-mrru.oss-cn-chengdu.aliyuncs.com/ruyb/202404191830196.png)
 
 - 常见查询
 
@@ -686,7 +683,7 @@ public void testAddDoc(){
 }
 ```
 
-![](https://picbed-for-mrru-mdfile.oss-cn-chengdu.aliyuncs.com/mrru-glodon/image-20220915093357930.png)
+![](https://typora-imgbed-mrru.oss-cn-chengdu.aliyuncs.com/ruyb/202404191830625.png)
 
 再添加一条，但是对birthday加transent注解
 
@@ -710,14 +707,14 @@ public void testAddDoc(){
 
 
 
-![image-20220915093705156](https://picbed-for-mrru-mdfile.oss-cn-chengdu.aliyuncs.com/mrru-glodon/image-20220915093705156.png)
+![image-20220915093705156](https://typora-imgbed-mrru.oss-cn-chengdu.aliyuncs.com/ruyb/202404191830165.png)
 
 > 文档添加--insert
 
 尝试再insert一次user1对象时，报错！
 
 ```shell
-org.springframework.dao.DuplicateKeyException: Write operation error on server 127.0.0.1:27017. Write error: WriteError{code=11000, message='E11000 duplicate key error collection: glodon.users index: _id_ dup key: { _id: 100 }', details={}}.; nested exception is com.mongodb.MongoWriteException: Write operation error on server 127.0.0.1:27017. Write error: WriteError{code=11000, message='E11000 duplicate key error collection: glodon.users index: _id_ dup key: { _id: 100 }', details={}}.
+org.springframework.dao.DuplicateKeyException: Write operation error on server 127.0.0.1:27017. Write error: WriteError{code=11000, message='E11000 duplicate key error collection: .users index: _id_ dup key: { _id: 100 }', details={}}.; nested exception is com.mongodb.MongoWriteException: Write operation error on server 127.0.0.1:27017. Write error: WriteError{code=11000, message='E11000 duplicate key error collection: .users index: _id_ dup key: { _id: 100 }', details={}}.
 ```
 
 ---
@@ -914,11 +911,11 @@ https://docs.spring.io/spring-data/mongodb/docs/2.2.2.RELEASE/reference/html/#re
 
 `CrudRepository`  接口定义的通用的底层持久性CRUD方法
 
-![image-20220919091640818](https://picbed-for-mrru-mdfile.oss-cn-chengdu.aliyuncs.com/mrru-glodon/image-20220919091640818.png)
+![image-20220919091640818](https://typora-imgbed-mrru.oss-cn-chengdu.aliyuncs.com/ruyb/202404191830585.png)
 
 `PagingAndSortingRepository`接口提供分页方法
 
-![image-20220919092419021](https://picbed-for-mrru-mdfile.oss-cn-chengdu.aliyuncs.com/mrru-glodon/image-20220919092419021.png)
+![image-20220919092419021](https://typora-imgbed-mrru.oss-cn-chengdu.aliyuncs.com/ruyb/202404191830773.png)
 
 `派生计数查询、删除方法`
 
@@ -976,7 +973,7 @@ https://docs.spring.io/spring-data/mongodb/docs/2.2.2.RELEASE/reference/html/#mo
 
 可以返回列表或者删除的数
 
-![image-20220919094333237](https://picbed-for-mrru-mdfile.oss-cn-chengdu.aliyuncs.com/mrru-glodon/image-20220919094333237.png)
+![image-20220919094333237](https://typora-imgbed-mrru.oss-cn-chengdu.aliyuncs.com/ruyb/202404191830266.png)
 
 
 

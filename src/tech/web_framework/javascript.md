@@ -22,7 +22,7 @@ ECMAScript 6 也称为 ECMAScript 2015。
 
 ECMAScript 7 也称为 ECMAScript 2016。
 
-![image-20220919135414757](https://picbed-for-mrru-mdfile.oss-cn-chengdu.aliyuncs.com/mrru-glodon/image-20220919135414757.png)
+![image-20220919135414757](https://typora-imgbed-mrru.oss-cn-chengdu.aliyuncs.com/ruyb/202404191834691.png)
 
 
 
@@ -35,7 +35,7 @@ ECMAScript 7 也称为 ECMAScript 2016。
 * 也可以把脚本保存到外部文件中。外部文件通常包含被多个网页使用的代码。
 * Chrome浏览器的开发者模式中的snippets可以编写代码
 
-![image-20220919140217951](https://picbed-for-mrru-mdfile.oss-cn-chengdu.aliyuncs.com/mrru-glodon/image-20220919140217951.png)
+![image-20220919140217951](https://typora-imgbed-mrru.oss-cn-chengdu.aliyuncs.com/ruyb/202404191834615.png)
 
 
 

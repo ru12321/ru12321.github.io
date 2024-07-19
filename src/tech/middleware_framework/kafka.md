@@ -412,10 +412,10 @@ spring:
   cloud:
     stream:
       bindings:
-        flDocStandardNodePubMnr_flow_input: #spring stream的信道名称
+        ABCXXX_flow_input: #spring stream的信道名称
           destination: task # 对应kafka架构的topic--主题名
           binder: kafka-ext # kafka作为spring cloud stream的binder的固定写法
-          group: estate_fl_doc_standard_flow_style # 对应kafka架构的consumer group--消费者组名
+          group: xxxx # 对应kafka架构的consumer group--消费者组名
 ```
 
 
