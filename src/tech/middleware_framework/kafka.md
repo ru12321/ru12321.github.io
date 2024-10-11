@@ -420,10 +420,6 @@ spring:
 
 
 
-
-
-
-
 ### spring cloud stream binding
 
 * 作用：连接spring应用和中间件的**连接+转换器**
