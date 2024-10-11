@@ -1,15 +1,9 @@
 import {navbar} from "vuepress-theme-hope";
 
 export const navbarConfig = navbar([
-  {
-    text: "技术学习",
-    icon: "software",
-    link: "/tech/"
-  },
-
   {text: "书籍阅读", icon: "read", link: "/book/"},
   {text: "个人随笔", icon: "leaf", link: "/essay/"},
-
+  {text: "投资理财", icon: "/investment/invest.svg", link: "/investment/"},
   {
     text: "网站相关",
     icon: "profile",
