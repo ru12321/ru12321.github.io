@@ -27,21 +27,48 @@ export const sidebarConfig = sidebar({
           collapsible: true,
         }
       ],
+    "/tech/":
+      [
+        {
+          text: "日常办公",
+          icon: "alias",
+          prefix: "daily/",
+          children: "structure",
+          collapsible: true,
+        },
+        {
+          text: "常看常新",
+          icon: "alias",
+          prefix: "orders/",
+          children: "structure",
+          collapsible: true,
+        },
+        {
+          text: "案例归纳",
+          icon: "alias",
+          prefix: "examples/",
+          children: "structure",
+          collapsible: true,
+        },
+      ],
     "/investment/": [
       {
         text: "A股短线",
+        prefix: "cnshort/",
         icon: "/investment/A股短线.svg",
         children: "structure",
         collapsible: true,
       },
       {
         text: "A股价投",
+        prefix: "cnlong/",
         icon: "/investment/A股价投.svg",
         children: "structure",
         collapsible: true,
       },
       {
         text: "美股投资",
+        prefix: "uslong/",
         icon: "/investment/美股.svg",
         children: "structure",
         collapsible: true,

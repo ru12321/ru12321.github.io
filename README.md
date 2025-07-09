@@ -1,6 +1,6 @@
-pnpm install  安装依赖
+pnpm install 安装依赖
 
-pnpm docs:dev 启动开发服务器
+pnpm docs:dev 启动开发服务器（自测用这个）
 
 pnpm docs:build 构建项目并输出
 
