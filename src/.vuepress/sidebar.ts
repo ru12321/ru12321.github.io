@@ -21,8 +21,16 @@ export const sidebarConfig = sidebar({
     "/essay/":
       [
         {
-          text: "个人随笔",
+          text: "短记吐槽",
           icon: "alias",
+          prefix: "short/",
+          children: "structure",
+          collapsible: true,
+        },
+        {
+          text: "长篇大论",
+          icon: "alias",
+          prefix: "long/",
           children: "structure",
           collapsible: true,
         }
@@ -78,6 +86,14 @@ export const sidebarConfig = sidebar({
       {
         text: "关于作者",
         icon: "study",
+        prefix: "man/",
+        children: "structure",
+        collapsible: true,
+      },
+      {
+        text: "博客搭建",
+        icon: "study",
+        prefix: "blog/",
         children: "structure",
         collapsible: true,
       }
