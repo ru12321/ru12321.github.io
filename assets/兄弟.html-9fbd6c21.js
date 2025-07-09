@@ -1,0 +1,1 @@
+import{_ as t,W as n,X as c,Y as e}from"./framework-715d567f.js";const s={},o=e("div",{class:"hint-container info"},[e("p",{class:"hint-container-title"},"相关信息"),e("p",null,"兄弟")],-1),_=[o];function a(i,l){return n(),c("div",null,_)}const d=t(s,[["render",a],["__file","兄弟.html.vue"]]);export{d as default};

@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-076e50fe","path":"/investment/cnshort/","title":"Cnshort","lang":"zh-CN","frontmatter":{"title":"Cnshort","article":false,"feed":false,"sitemap":false,"seo":false,"head":[]},"headers":[],"git":{},"readingTime":{"minutes":0.03,"words":9},"filePathRelative":null,"copyright":{}}');export{e as data};

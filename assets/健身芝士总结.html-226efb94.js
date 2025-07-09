@@ -1,1 +1,0 @@
-import{_ as e,W as t,X as o,Y as _}from"./framework-579fb310.js";const s={},c=_("p",null,"呼吸",-1),n=_("p",null,"1.向心运动往外呼气，离心运动往内吸气",-1),l=[c,n];function r(a,d){return t(),o("div",null,l)}const f=e(s,[["render",r],["__file","健身芝士总结.html.vue"]]);export{f as default};
