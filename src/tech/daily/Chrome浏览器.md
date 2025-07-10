@@ -1,5 +1,5 @@
 ---
-icon: read
+icon: iconfont icon-ruyb-liulanqi
 title: chrome浏览器
 date: 2025-07-09
 category: 办公

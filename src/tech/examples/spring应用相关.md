@@ -1,5 +1,5 @@
 ---
-icon: read
+icon: iconfont icon-ruyb-spring
 title: spring应用
 date: 2025-07-09
 category: 生产案例
