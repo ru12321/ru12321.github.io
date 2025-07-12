@@ -16,11 +16,11 @@ export default defineUserConfig({
   theme,
 
   //控制文章右侧的标题栏 显示的标题级别
-  markdown: {
-    headers: {
-      level: [1, 2, 3]
-    }
-  },
+  // markdown: {
+  //   headers: {
+  //     level: [1, 2, 3]
+  //   }
+  // },
   shouldPrefetch: false,
 
   plugins: [
