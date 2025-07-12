@@ -9,7 +9,7 @@ comment: true
 
 # 1.解决扩展程序、插件不能在谷歌商店安装的情况
 
-![img](../../%E5%9B%BE%E7%89%87%E5%AD%98%E5%82%A8/1748584648085-807417af-6ce4-43ee-910c-5bea11653be2.png)
+![img](https://typora-imgbed-mrru.oss-cn-chengdu.aliyuncs.com/ruyb202507121059620.png)
 
 # 2.插件
 
