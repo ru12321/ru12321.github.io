@@ -5,14 +5,14 @@ export const sidebarConfig = sidebar({
       [
         {
           text: "人文社科",
-          icon: "share",
+          icon: "iconfont icon-ruyb-shehui",
           prefix: "social/",
           children: "structure",
           collapsible: true,
         },
         {
           text: "小说作品",
-          icon: "read",
+          icon: "iconfont icon-ruyb-duxiaoshuo",
           prefix: "novel/",
           collapsible: true,
           children: "structure"
@@ -22,14 +22,14 @@ export const sidebarConfig = sidebar({
       [
         {
           text: "短记吐槽",
-          icon: "alias",
+          icon: "iconfont icon-ruyb-duanpian",
           prefix: "short/",
           children: "structure",
           collapsible: true,
         },
         {
           text: "长篇大论",
-          icon: "alias",
+          icon: "iconfont icon-ruyb-changpiangushi",
           prefix: "long/",
           children: "structure",
           collapsible: true,
@@ -39,21 +39,21 @@ export const sidebarConfig = sidebar({
       [
         {
           text: "日常办公",
-          icon: "alias",
+          icon: "iconfont icon-ruyb-bangong",
           prefix: "daily/",
           children: "structure",
           collapsible: true,
         },
         {
           text: "常看常新",
-          icon: "alias",
+          icon: "iconfont icon-ruyb-a-smlsicon_kuaijiejian",
           prefix: "orders/",
           children: "structure",
           collapsible: true,
         },
         {
           text: "案例归纳",
-          icon: "alias",
+          icon: "iconfont icon-ruyb-chenggonganli",
           prefix: "examples/",
           children: "structure",
           collapsible: true,
@@ -85,14 +85,14 @@ export const sidebarConfig = sidebar({
     "/about_me/": [
       {
         text: "关于作者",
-        icon: "study",
+        icon: "iconfont icon-ruyb-zuozhe2",
         prefix: "man/",
         children: "structure",
         collapsible: true,
       },
       {
         text: "博客搭建",
-        icon: "study",
+        icon: "iconfont icon-ruyb-jieshao",
         prefix: "blog/",
         children: "structure",
         collapsible: true,

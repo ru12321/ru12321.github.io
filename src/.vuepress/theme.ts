@@ -52,7 +52,7 @@ export default hopeTheme({
   displayFooter: true,
 
   //字体图标资源链接，支持 'iconfont' 和 'fontawesome' 关键字
-  iconAssets: ["https://at.alicdn.com/t/c/font_4414274_gaabx261tx.css"],
+  iconAssets: ["https://at.alicdn.com/t/c/font_4414274_njnyj154dbc.css"],
 
   themeColor: {
     blue: "#2196f3",
